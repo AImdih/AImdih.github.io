@@ -1,0 +1,14 @@
+Company : Ubisoft
+Platform : PC
+Year : 2026 - Present
+Engine : Anvil
+Role : Programmer
+
+Responsibility :
+	- Lead the tech of Kenway's Fleet Activity features (Gameplay and UI).
+	- Design the data structure of the features.
+	- Implement Gameplay and UI of the features using C++.
+	- Onboard new programmers joining the team.
+	- Debug and optimize the features.
+	- Support Hideout team implementing new features.
+	- Collaborate and communicate with other teams from different studios.

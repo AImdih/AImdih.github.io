@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your Name — Game Developer Portfolio</title>
+  <meta name="description" content="Professional and personal game projects by Your Name — gameplay, worlds and experiments.">
+  <meta name="theme-color" content="#08090b">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Your Name — Game Developer Portfolio">
+  <meta property="og:description" content="Professional and personal game projects by Your Name.">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+
+  <link rel="preload" as="image" href="icons/3_assassin's_creed_shadows.avif">
+  <link rel="preload" as="image" href="icons/5_rayman_legends.jpg">
+  <link rel="preload" as="image" href="icons/4_skull_and_bones.avif">
+
+  <script>
+    document.documentElement.classList.add('js');
+    /* Safety net: never let the intro loader trap the page if main.js fails. */
+    window.setTimeout(function () {
+      document.documentElement.classList.add('is-ready');
+    }, 2400);
+  </script>
+  <noscript>
+    <style>
+      .loader { display: none !important; }
+      .mobile-menu { display: none !important; }
+    </style>
+  </noscript>
+</head>
+<body>
+  <a class="skip-link" href="#work">Skip to selected work</a>
+
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader__mark" data-bind="initials">YN</div>
+    <div class="loader__bar"><span id="loader-bar"></span></div>
+    <div class="loader__pct"><span id="loader-pct">00</span><span>%</span></div>
+  </div>
+
+  <div class="ambient" aria-hidden="true">
+    <span class="ambient__glow ambient__glow--one"></span>
+    <span class="ambient__glow ambient__glow--two"></span>
+    <span class="ambient__glow ambient__glow--three"></span>
+    <span class="ambient__grid"></span>
+  </div>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="cursor-glow" id="cursor-glow" aria-hidden="true"></div>
+  <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+
+  <header class="site-header" id="site-header">
+    <div class="container nav-inner">
+      <a class="brand" href="#top" aria-label="Back to top">
+        <span class="brand-mark" data-bind="initials">YN</span>
+        <span class="brand-text">
+          <span class="brand-name" data-bind="name">Your Name</span>
+          <span class="brand-role">Portfolio</span>
+        </span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#work" data-nav data-work-nav="professional">Professional</a>
+        <a href="#personal" data-nav data-work-nav="personal">Personal</a>
+        <a href="#about" data-nav>About</a>
+        <a href="#contact" data-nav>Contact</a>
+      </nav>
+
+      <a class="btn btn--small btn--ghost nav-cta" href="#contact">
+        Let's talk
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Site menu" aria-hidden="true" tabindex="-1" inert>
+    <nav class="mobile-menu__nav" aria-label="Mobile">
+      <a href="#work" data-menu-link data-work-nav="professional"><span>01</span>Professional</a>
+      <a href="#personal" data-menu-link data-work-nav="personal"><span>02</span>Personal</a>
+      <a href="#about" data-menu-link><span>03</span>About</a>
+      <a href="#contact" data-menu-link><span>04</span>Contact</a>
+    </nav>
+    <div class="mobile-menu__bottom">
+      <a class="mobile-menu__email" href="mailto:hello@example.com" data-bind="email">hello@example.com</a>
+      <div class="socials" id="mobile-socials"></div>
+    </div>
+  </div>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="hero-kicker" data-anim style="--d:0">
+            <span class="status-dot" aria-hidden="true"></span>
+            <span data-bind="role">Game Developer</span>
+          </p>
+
+          <h1 data-anim style="--d:1" data-bind="name">Your Name</h1>
+
+          <p class="hero-tagline" data-anim style="--d:2" data-bind="tagline">
+            Worlds worth getting lost in.
+          </p>
+
+          <p class="hero-lead" data-anim style="--d:3" data-bind="intro">
+            I'm a game developer who helps ship gameplay and worlds for professional
+            titles — and builds small games, tools and experiments on the side. This
+            portfolio collects both.
+          </p>
+
+          <div class="hero-actions" data-anim style="--d:4">
+            <a class="btn btn--primary" href="#work" data-work-nav="professional">
+              Professional work
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a class="btn btn--ghost" href="#personal" data-work-nav="personal">Personal projects</a>
+          </div>
+
+          <div class="hero-stats" data-anim style="--d:5">
+            <div class="hero-stat">
+              <strong data-stat="games">09</strong>
+              <span>Professional titles</span>
+            </div>
+            <span class="hero-stats__divider" aria-hidden="true"></span>
+            <div class="hero-stat">
+              <strong data-stat="series">05</strong>
+              <span>Series</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual" data-anim style="--d:2">
+          <div class="visual-stage" id="visual-stage">
+            <div class="visual-glow" aria-hidden="true"></div>
+
+            <div class="cover-fan" id="cover-fan">
+              <figure class="fan-card fan-card--left">
+                <div class="fan-card__inner">
+                  <img src="icons/3_assassin's_creed_shadows.avif" alt="Assassin's Creed Shadows cover art" width="1200" height="687">
+                  <figcaption>
+                    <span class="fan-index">03</span>
+                    <span>Assassin's Creed Shadows</span>
+                  </figcaption>
+                </div>
+              </figure>
+
+              <figure class="fan-card fan-card--center">
+                <div class="fan-card__inner">
+                  <img src="icons/5_rayman_legends.jpg" alt="Rayman Legends cover art" width="596" height="335" fetchpriority="high">
+                  <figcaption>
+                    <span class="fan-index">05</span>
+                    <span>Rayman Legends</span>
+                  </figcaption>
+                </div>
+              </figure>
+
+              <figure class="fan-card fan-card--right">
+                <div class="fan-card__inner">
+                  <img src="icons/4_skull_and_bones.avif" alt="Skull and Bones cover art" width="960" height="540">
+                  <figcaption>
+                    <span class="fan-index">04</span>
+                    <span>Skull and Bones</span>
+                  </figcaption>
+                </div>
+              </figure>
+            </div>
+
+            <div class="orbit-chip orbit-chip--one" aria-hidden="true"><strong>09</strong> titles</div>
+            <div class="orbit-chip orbit-chip--two" aria-hidden="true"><strong>05</strong> series</div>
+          </div>
+        </div>
+      </div>
+
+      <a class="scroll-cue" href="#work" aria-label="Scroll to professional work" data-work-nav="professional">
+        <span class="scroll-cue__line" aria-hidden="true"></span>
+        <span>Scroll</span>
+      </a>
+    </section>
+
+    <section class="marquee" aria-hidden="true">
+      <div class="marquee__track" id="marquee-track"></div>
+    </section>
+
+    <section class="work section" id="work">
+      <span class="anchor-target" id="personal" aria-hidden="true"></span>
+      <div class="container">
+        <div class="work-tabs" role="tablist" aria-label="Project type" data-reveal>
+          <button class="work-tab is-active" id="tab-professional" type="button" role="tab" aria-selected="true" aria-controls="work-panel" data-work-tab="professional">
+            Professional
+            <span class="work-tab__count" data-tab-count="professional">09</span>
+          </button>
+          <button class="work-tab" id="tab-personal" type="button" role="tab" aria-selected="false" aria-controls="work-panel" tabindex="-1" data-work-tab="personal">
+            Personal
+            <span class="work-tab__count" data-tab-count="personal">03</span>
+          </button>
+        </div>
+
+        <div class="work-panel" id="work-panel" role="tabpanel" aria-labelledby="tab-professional">
+          <div class="section-head" data-reveal>
+            <div id="work-head-copy">
+              <p class="eyebrow" id="work-eyebrow">Shipped work</p>
+              <h2 id="work-title">Professional <br><span class="text-dim">Projects.</span></h2>
+            </div>
+            <p class="section-lead" id="work-lead">
+              Nine titles shipped with teams across five series — the games I've
+              helped build professionally. Open any card for the full story.
+            </p>
+          </div>
+
+          <div class="work-toolbar" data-reveal style="--d:1">
+            <p class="work-toolbar__hint" id="work-hint" hidden>
+              Made outside work — open a card for the full story.
+            </p>
+            <div class="filters" id="professional-filters" role="group" aria-label="Filter professional projects">
+              <button class="filter is-active" type="button" data-filter="all" aria-pressed="true">All work <span>09</span></button>
+              <button class="filter" type="button" data-filter="ac" aria-pressed="false">Assassin's Creed <span>02</span></button>
+              <button class="filter" type="button" data-filter="rayman" aria-pressed="false">Rayman <span>04</span></button>
+              <button class="filter" type="button" data-filter="other" aria-pressed="false">Other worlds <span>03</span></button>
+            </div>
+            <div class="work-toolbar__actions">
+              <p class="work-count" id="work-count" aria-live="polite">Showing 09 of 09</p>
+              <div class="view-switch" role="group" aria-label="Project view">
+                <button class="view-switch__btn is-active" type="button" data-work-view="map" aria-pressed="true" title="World map view">
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s7-5.1 7-11a7 7 0 1 0-14 0c0 5.9 7 11 7 11Z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="10" r="2.4" stroke="currentColor" stroke-width="1.6"/></svg>
+                  <span>Map</span>
+                </button>
+                <button class="view-switch__btn" type="button" data-work-view="grid" aria-pressed="false" title="Grid view">
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="4" width="6.5" height="6.5" rx="1.2" stroke="currentColor" stroke-width="1.6"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.2" stroke="currentColor" stroke-width="1.6"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.2" stroke="currentColor" stroke-width="1.6"/><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.2" stroke="currentColor" stroke-width="1.6"/></svg>
+                  <span>Grid</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="work-map" id="work-map" data-reveal>
+            <div class="work-map__canvas" id="work-map-canvas">
+              <div class="work-map__hud">
+                <span class="work-map__label" id="map-label">Campaign map</span>
+                <span class="work-map__meta" id="map-meta">09 levels</span>
+              </div>
+
+              <svg class="work-map__terrain" viewBox="0 0 1000 600" preserveAspectRatio="none" aria-hidden="true">
+                <g fill="none" stroke="currentColor" stroke-width="1">
+                  <path d="M-40 180 C 90 130 180 230 300 180 S 520 80 650 150 S 880 250 1050 170"/>
+                  <path d="M-30 240 C 100 190 190 290 310 240 S 530 140 660 210 S 890 310 1060 230"/>
+                  <path d="M-20 300 C 110 250 200 350 320 300 S 540 200 670 270 S 900 370 1070 290"/>
+                  <path d="M120 470 C 200 400 330 430 390 360 S 540 300 610 370 S 760 460 880 390"/>
+                  <path d="M90 520 C 170 450 300 480 360 410 S 510 350 580 420 S 730 510 850 440"/>
+                  <path d="M650 60 C 700 110 780 90 820 140 S 900 220 980 190"/>
+                </g>
+                <g fill="currentColor" opacity=".42">
+                  <circle cx="140" cy="110" r="1.4"/><circle cx="710" cy="90" r="1.2"/>
+                  <circle cx="860" cy="140" r="1.4"/><circle cx="250" cy="390" r="1.2"/>
+                  <circle cx="480" cy="470" r="1.4"/><circle cx="900" cy="330" r="1.2"/>
+                  <circle cx="70" cy="430" r="1.2"/><circle cx="560" cy="100" r="1.2"/>
+                </g>
+              </svg>
+
+              <svg class="work-map__route" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                <path class="work-map__route-base" d=""></path>
+                <path class="work-map__route-glow" pathLength="1" d=""></path>
+              </svg>
+
+              <div class="work-map__nodes" id="map-nodes"></div>
+              <span class="work-map__hint" aria-hidden="true">Hover to preview · Click to open</span>
+            </div>
+
+            <aside class="map-briefing" id="map-briefing" aria-live="polite">
+              <div class="map-briefing__media">
+                <img id="map-briefing-image" src="icons/5_rayman_legends.jpg" alt="" width="596" height="335">
+                <span class="map-briefing__index" id="map-briefing-index">01 / 09</span>
+                <span class="map-briefing__status" id="map-briefing-status">Shipped</span>
+              </div>
+              <div class="map-briefing__body">
+                <p class="eyebrow" id="map-briefing-eyebrow">Selected project</p>
+                <h3 id="map-briefing-title">Project title</h3>
+                <p class="map-briefing__meta" id="map-briefing-meta">Series · Genre · Year</p>
+                <p class="map-briefing__summary" id="map-briefing-summary"></p>
+                <button class="btn btn--primary map-briefing__cta" id="map-briefing-cta" type="button">
+                  Open case study
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+              </div>
+            </aside>
+          </div>
+
+          <div class="work-grid" id="work-grid" hidden></div>
+          <p class="work-empty" id="work-empty" hidden>No projects in this tab yet.</p>
+        </div>
+
+        <noscript>
+          <p class="no-script">Enable JavaScript to browse the interactive project gallery.</p>
+        </noscript>
+      </div>
+    </section>
+
+    <section class="about section" id="about">
+      <div class="container about-grid">
+        <div class="about-copy" data-reveal>
+          <p class="eyebrow">About</p>
+          <h2>I care about how games <em>feel.</em></h2>
+          <p class="about-text" data-bind="about">
+            I'm a game developer who cares about how a game feels in the player's
+            hands — the weight of a jump, the pull of a good loop, the moment a world
+            suddenly clicks. Over the years I've helped ship professional titles across
+            console, PC and mobile, from cursed seas and shadowed cities to painted forests.
+          </p>
+        </div>
+
+        <aside class="about-card" data-reveal style="--d:1">
+          <div class="about-stats">
+            <div class="about-stat">
+              <strong data-counter="9" data-stat="games">09</strong>
+              <span>Professional titles</span>
+            </div>
+            <div class="about-stat">
+              <strong data-counter="5" data-stat="series">05</strong>
+              <span>Series</span>
+            </div>
+          </div>
+          <div class="about-divider" aria-hidden="true"></div>
+          <p class="about-label">What I bring</p>
+          <ul class="skill-list" id="skill-list"></ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="contact section" id="contact">
+      <div class="contact-glow" aria-hidden="true"></div>
+      <div class="container">
+        <div class="contact-inner" data-reveal>
+          <p class="eyebrow">Contact</p>
+          <h2>Let's build the <em>next world.</em></h2>
+          <p class="contact-lead">
+            Have a project, a role or an idea worth exploring? My inbox is always open.
+          </p>
+          <a class="contact-email" href="mailto:hello@example.com" data-bind="email">
+            <span>hello@example.com</span>
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <div class="socials socials--large" id="socials"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year">2026</span> <span data-bind="name">Your Name</span></p>
+      <p class="footer-note">Designed &amp; built with care.</p>
+      <a class="back-to-top" href="#top">
+        Back to top
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </footer>
+
+  <dialog class="project-dialog" id="project-dialog" aria-labelledby="dialog-title">
+    <div class="dialog-shell" id="dialog-shell" tabindex="-1">
+      <button class="dialog-close" id="dialog-close" type="button" aria-label="Close project details">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
+
+      <div class="dialog-media">
+        <img id="dialog-image" src="icons/5_rayman_legends.jpg" alt="" width="596" height="335">
+        <div class="dialog-media__shade" aria-hidden="true"></div>
+        <div class="dialog-media__meta">
+          <span id="dialog-index">01 / 09</span>
+          <span id="dialog-series">Series</span>
+        </div>
+      </div>
+
+      <div class="dialog-content" id="dialog-content">
+        <div class="dialog-head">
+          <p class="eyebrow" id="dialog-eyebrow">Professional project</p>
+          <h2 id="dialog-title">Project title</h2>
+          <div class="tag-row" id="dialog-tags"></div>
+        </div>
+
+        <p class="dialog-summary" id="dialog-summary"></p>
+
+        <div class="dialog-lists" id="dialog-lists">
+          <div class="dialog-highlights" id="dialog-responsibilities-wrap" hidden>
+            <h3 id="dialog-responsibilities-title">Responsibilities</h3>
+            <ul id="dialog-responsibilities"></ul>
+          </div>
+
+          <div class="dialog-highlights" id="dialog-highlights-wrap">
+            <h3>Game highlights</h3>
+            <ul id="dialog-highlights"></ul>
+          </div>
+        </div>
+
+        <dl class="dialog-facts" id="dialog-facts"></dl>
+
+        <a class="btn btn--primary dialog-link" id="dialog-link" href="#" target="_blank" rel="noopener">
+          View project
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+
+        <div class="dialog-links" id="dialog-links" hidden></div>
+      </div>
+
+      <div class="dialog-nav">
+        <button class="dialog-nav__btn" id="dialog-prev" type="button">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>Previous</span>
+        </button>
+        <span class="dialog-nav__count" id="dialog-counter">01 / 09</span>
+        <button class="dialog-nav__btn" id="dialog-next" type="button">
+          <span>Next</span>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="assets/projects.js" defer></script>
+  <script src="assets/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+Company : Ubisoft
+Platform : PC
+Year : 2026 - Present
+Engine : Snowdrop
+Role : Programmer
+
+Responsibility :
+	- Support the team shipping the game by implementing remaining features and fixing bugs.
